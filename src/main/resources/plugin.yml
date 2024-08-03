@@ -1,0 +1,4 @@
+name: UncraftableShulkers
+version: '1.0-SNAPSHOT'
+main: mov.naspen.uncraftableShulkers.UncraftableShulkers
+api-version: '1.21'
