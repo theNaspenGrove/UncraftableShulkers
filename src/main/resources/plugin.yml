@@ -1,4 +1,5 @@
 name: UncraftableShulkers
-version: '1.0-SNAPSHOT'
+version: ${project.version}
+authors: [ naspen ]
 main: mov.naspen.uncraftableShulkers.UncraftableShulkers
 api-version: '1.21'
