@@ -8,11 +8,17 @@ import org.bukkit.inventory.CraftingRecipe;
 public class CraftItemEventListener implements Listener {
     @EventHandler
     public void onCraftItemEvent(CraftItemEvent event) {
+    if(event.getRecipe() instanceof CraftingRecipe recipe) {
         //if key matches
-        if(event.getRecipe() instanceof CraftingRecipe recipe) {
-            if(recipe.getKey().getKey().equals("shulker_box_to_shells")) {
-                //Pass the inventor of the crafting matrix to the emptyShulkerOnCraft method
-                CraftEventHandler.emptyShulkerOnCraft(event.getInventory());
+            switch (recipe.getKey().getKey()) {
+                case "shulker_box_to_shells" -> {
+                    //Pass the inventor of the crafting matrix to the emptyShulkerOnCraft method
+                    CraftEventHandler.emptyShulkerOnCraft(event.getInventory());
+                }
+                case "bundle_to_leather" -> {
+                    //Pass the inventor of the crafting matrix to the emptyShulkerOnCraft method
+                    CraftEventHandler.emptyBundleOnCraft(event.getInventory());
+                }
             }
         }
     }

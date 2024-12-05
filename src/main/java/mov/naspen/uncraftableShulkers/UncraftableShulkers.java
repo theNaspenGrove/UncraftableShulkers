@@ -5,7 +5,8 @@ import mov.naspen.uncraftableShulkers.events.CrafterCraftEventListener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static mov.naspen.uncraftableShulkers.utils.RecipeManager.addShapelessRecipe;
+import static mov.naspen.uncraftableShulkers.utils.RecipeManager.addShapelessBundleRecipe;
+import static mov.naspen.uncraftableShulkers.utils.RecipeManager.addShapelessShulkerRecipe;
 
 public final class UncraftableShulkers extends JavaPlugin {
 
@@ -15,9 +16,11 @@ public final class UncraftableShulkers extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         // Plugin startup logic
-        addShapelessRecipe(this);
+        addShapelessShulkerRecipe(this);
+        addShapelessBundleRecipe(this);
         getServer().getPluginManager().registerEvents(new CraftItemEventListener(), this);
         getServer().getPluginManager().registerEvents(new CrafterCraftEventListener(), this);
+
     }
 
     @Override
